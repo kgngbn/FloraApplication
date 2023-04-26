@@ -30,8 +30,7 @@ dev_dependencies:
     sdk: flutter
 
 # To add assets to your application, add an assets section, like this:
-assets:
-  - assets/icon.jpg
+
 
 
 # For information on the generic Dart part of this file, see the
