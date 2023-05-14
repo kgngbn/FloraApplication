@@ -10,9 +10,11 @@ class BasicScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.brown.shade900,
-        title: Text('Flora',
-            style: GoogleFonts.sassyFrass(
-                fontSize: 50, color: Colors.brown.shade50)),
+        title: Text('FLORA',
+            style: GoogleFonts.poppins(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+                color: Colors.brown.shade50)),
         actions: <Widget>[
           Padding(
             padding: const EdgeInsets.all(10.0),
@@ -23,13 +25,11 @@ class BasicScreen extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Image.asset('images/icon.jpg'),
+          Image.asset('images/flora.png'),
           TextLayout(),
         ],
       ),
-
       drawer: AppDrawer(),
-          );
- 
+    );
   }
 }

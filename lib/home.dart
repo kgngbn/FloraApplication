@@ -10,9 +10,11 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.brown.shade900,
-        title: Text('Flora',
-            style: GoogleFonts.sassyFrass(
-                fontSize: 50, color: Colors.brown.shade50)),
+        title: Text('FLORA',
+            style: GoogleFonts.poppins(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+                color: Colors.brown.shade50)),
         actions: <Widget>[
           Padding(
             padding: const EdgeInsets.all(10.0),
@@ -92,16 +94,16 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   Text(
                     title,
-                    style: TextStyle(
-                      fontSize: 18,
+                    style: GoogleFonts.poppins(
+                      fontSize: 15,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   SizedBox(height: 4),
                   Text(
                     description,
-                    style: TextStyle(
-                      fontSize: 16,
+                    style: GoogleFonts.poppins(
+                      fontSize: 12,
                     ),
                   ),
                 ],

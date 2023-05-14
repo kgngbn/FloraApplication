@@ -11,9 +11,9 @@ class AppDrawer extends StatelessWidget {
         children: [
           const DrawerHeader(
             decoration: BoxDecoration(
-              color: Colors.brown,
+              color: Colors.transparent,
               image: DecorationImage(
-                image: AssetImage("images/icon.jpg"),
+                image: AssetImage("images/flora.png"),
                 fit: BoxFit.contain,
               ),
             ),
