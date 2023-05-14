@@ -15,8 +15,9 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   late FirebaseStorage storage;
   late Reference ref;
-  late UploadTask uploadTask;
+  late UploadTask? uploadTask;
   String url = '';
+  File defaultImage = File('images/default_image.jpg');
 
   @override
   void initState() {
@@ -40,6 +41,24 @@ class _HomeScreenState extends State<HomeScreen> {
         print('No image selected.');
       }
     });
+  }
+
+  Future<void> uploadImage() async {
+    if (imageFile != null) {
+      setState(() {
+        uploadTask = ref.putFile(imageFile!);
+      });
+
+      TaskSnapshot snapshot = await uploadTask!.whenComplete(() {});
+      url = await snapshot.ref.getDownloadURL();
+    } else {
+      setState(() {
+        uploadTask = ref.putFile(defaultImage);
+      });
+
+      TaskSnapshot snapshot = await uploadTask!.whenComplete(() {});
+      url = await snapshot.ref.getDownloadURL();
+    }
   }
 
   @override
@@ -73,7 +92,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       MaterialPageRoute(
                         builder: (context) => DetailsScreen(
                             title: 'Bears Breeches',
-                            imageUrl: url,
+                            imageUrl: url.isNotEmpty
+                                ? url
+                                : 'images/bearsbreeches.jpg',
                             subtitle: ''),
                       ),
                     );
@@ -88,7 +109,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       MaterialPageRoute(
                         builder: (context) => DetailsScreen(
                             title: 'Green Chirett',
-                            imageUrl: url,
+                            imageUrl:
+                                url.isNotEmpty ? url : 'images/serpentina.jpg',
                             subtitle: ''),
                       ),
                     );
@@ -102,7 +124,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       context,
                       MaterialPageRoute(
                         builder: (context) => DetailsScreen(
-                            title: 'Zebra Plant', imageUrl: url, subtitle: ''),
+                            title: 'Zebra Plant',
+                            imageUrl:
+                                url.isNotEmpty ? url : 'images/zebraplant.jpg',
+                            subtitle: ''),
                       ),
                     );
                   },

@@ -2,7 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_layout/home.dart';
 
-Future<void> main() async {
+Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(StaticApp());
@@ -27,4 +27,7 @@ class StaticApp extends StatelessWidget {
       home: HomeScreen(),
     );
   }
+
+  // Add null safety to the constructor
+  const StaticApp({Key? key}) : super(key: key);
 }

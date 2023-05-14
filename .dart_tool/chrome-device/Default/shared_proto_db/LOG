@@ -1,3 +1,2 @@
-2023/05/15-01:36:19.716 7778 Reusing MANIFEST C:\Users\Jo\AppData\Local\Temp\flutter_tools.5d03b060\flutter_tools_chrome_device.35858366\Default\shared_proto_db/MANIFEST-000001
-2023/05/15-01:36:19.718 7778 Recovering log #3
-2023/05/15-01:36:19.720 7778 Reusing old log C:\Users\Jo\AppData\Local\Temp\flutter_tools.5d03b060\flutter_tools_chrome_device.35858366\Default\shared_proto_db/000003.log 
+2023/05/15-03:44:38.207 2c84 Creating DB C:\Users\Jo\AppData\Local\Temp\flutter_tools.6f843ca\flutter_tools_chrome_device.4b5a3ce9\Default\shared_proto_db since it was missing.
+2023/05/15-03:44:38.220 2c84 Reusing MANIFEST C:\Users\Jo\AppData\Local\Temp\flutter_tools.6f843ca\flutter_tools_chrome_device.4b5a3ce9\Default\shared_proto_db/MANIFEST-000001
