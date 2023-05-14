@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class HomeScreenTextField extends StatefulWidget {
-  const HomeScreenTextField({Key key}) : super(key: key);
+  const HomeScreenTextField({Key? key}) : super(key: key);
 
   @override
   _HomeScreenTextFieldState createState() => _HomeScreenTextFieldState();

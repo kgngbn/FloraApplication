@@ -1,5 +1,4 @@
 import 'dart:math' as Math;
-
 import 'package:flutter/material.dart';
 
 class ImmutableWidget extends StatelessWidget {

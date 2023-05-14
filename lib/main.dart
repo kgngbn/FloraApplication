@@ -1,9 +1,12 @@
-import 'package:flutter/cupertino.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_layout/basic_screen.dart';
 import 'package:flutter_layout/home.dart';
 
-void main() => runApp(StaticApp());
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(StaticApp());
+}
 
 class StaticApp extends StatelessWidget {
   @override

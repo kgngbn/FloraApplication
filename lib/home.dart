@@ -1,10 +1,47 @@
+import 'dart:io';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_layout/immutable_widget.dart';
-import 'package:flutter_layout/textfield.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:image_picker/image_picker.dart';
 import 'app_drawer.dart';
+import 'textfield.dart';
+import 'details.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
+  @override
+  _HomeScreenState createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  late FirebaseStorage storage;
+  late Reference ref;
+  late UploadTask uploadTask;
+  String url = '';
+
+  @override
+  void initState() {
+    super.initState();
+    storage = FirebaseStorage.instance;
+    ref = storage
+        .ref()
+        .child('images/image_${DateTime.now().millisecondsSinceEpoch}.jpg');
+  }
+
+  File? imageFile;
+
+  Future<void> getImage() async {
+    final pickedFile =
+        await ImagePicker().getImage(source: ImageSource.gallery);
+
+    setState(() {
+      if (pickedFile != null) {
+        imageFile = File(pickedFile.path);
+      } else {
+        print('No image selected.');
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,20 +66,107 @@ class HomeScreen extends StatelessWidget {
           Expanded(
             child: ListView(
               children: <Widget>[
-                _buildItem('Bears Breeches', 'Acanthus balanicus',
-                    'images/bearsbreeches.jpg'),
-                _buildItem('Green Chiretta / Serpentina',
-                    'Andrographis paniculate', 'images/serpentina.jpg'),
-                _buildItem('Zebra Plant', 'Aphelandra squarrosa',
-                    'images/zebraplant.jpg'),
-                _buildItem('Chinese Violet', 'Asystasia gangetica',
-                    'images/chineseviolet.jpg'),
-                _buildItem('Api Api Putih / Bungalon', 'Avicennia alba',
-                    'images/bungalon.jpg'),
-                _buildItem('Grey Barleria ', 'Barleria albostellata',
-                    'images/barleria.jpg'),
-                _buildItem('Peristrophe', 'Dicliptera inaequalis',
-                    'images/peristrophe.jpg'),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DetailsScreen(
+                            title: 'Bears Breeches',
+                            imageUrl: url,
+                            subtitle: ''),
+                      ),
+                    );
+                  },
+                  child: _buildItem('Bears Breeches', 'Acanthus balanicus',
+                      'images/bearsbreeches.jpg'),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DetailsScreen(
+                            title: 'Green Chirett',
+                            imageUrl: url,
+                            subtitle: ''),
+                      ),
+                    );
+                  },
+                  child: _buildItem('Green Chiretta / Serpentina',
+                      'Andrographis paniculate', 'images/serpentina.jpg'),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DetailsScreen(
+                            title: 'Zebra Plant', imageUrl: url, subtitle: ''),
+                      ),
+                    );
+                  },
+                  child: _buildItem('Zebra Plant', 'Aphelandra squarrosa',
+                      'images/zebraplant.jpg'),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DetailsScreen(
+                            title: 'Chinese Violet',
+                            imageUrl: url,
+                            subtitle: ''),
+                      ),
+                    );
+                  },
+                  child: _buildItem('Chinese Violet', 'Asystasia gangetica',
+                      'images/chineseviolet.jpg'),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DetailsScreen(
+                            title: 'Api Api Putih / Bungalon',
+                            imageUrl: url,
+                            subtitle: ''),
+                      ),
+                    );
+                  },
+                  child: _buildItem('Api Api Putih / Bungalon',
+                      'Avicennia alba', 'images/bungalon.jpg'),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DetailsScreen(
+                            title: 'Grey Barleria',
+                            imageUrl: url,
+                            subtitle: ''),
+                      ),
+                    );
+                  },
+                  child: _buildItem('Grey Barleria ', 'Barleria albostellata',
+                      'images/barleria.jpg'),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DetailsScreen(
+                            title: 'Peristrophe', imageUrl: url, subtitle: ''),
+                      ),
+                    );
+                  },
+                  child: _buildItem('Peristrophe', 'Dicliptera inaequalis',
+                      'images/peristrophe.jpg'),
+                ),
               ],
             ),
           ),
@@ -61,7 +185,7 @@ class HomeScreen extends StatelessWidget {
         color: Colors.brown[100],
         boxShadow: [
           BoxShadow(
-            color: Colors.brown[900].withOpacity(0.5),
+            color: Colors.brown[900]!.withOpacity(0.5),
             blurRadius: 2,
             offset: Offset(0, 2),
           ),
