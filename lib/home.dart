@@ -1,66 +1,19 @@
-import 'dart:io';
-import 'package:firebase_storage/firebase_storage.dart';
+// import 'dart:io';
+//import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:image_picker/image_picker.dart';
+// import 'package:image_picker/image_picker.dart';
 import 'app_drawer.dart';
+import 'models/model.dart';
 import 'textfield.dart';
 import 'details.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  late FirebaseStorage storage;
-  late Reference ref;
-  late UploadTask? uploadTask;
-  String url = '';
-  File defaultImage = File('images/default_image.jpg');
-
-  @override
-  void initState() {
-    super.initState();
-    storage = FirebaseStorage.instance;
-    ref = storage
-        .ref()
-        .child('images/image_${DateTime.now().millisecondsSinceEpoch}.jpg');
-  }
-
-  File? imageFile;
-
-  Future<void> getImage() async {
-    final pickedFile =
-        await ImagePicker().getImage(source: ImageSource.gallery);
-
-    setState(() {
-      if (pickedFile != null) {
-        imageFile = File(pickedFile.path);
-      } else {
-        print('No image selected.');
-      }
-    });
-  }
-
-  Future<void> uploadImage() async {
-    if (imageFile != null) {
-      setState(() {
-        uploadTask = ref.putFile(imageFile!);
-      });
-
-      TaskSnapshot snapshot = await uploadTask!.whenComplete(() {});
-      url = await snapshot.ref.getDownloadURL();
-    } else {
-      setState(() {
-        uploadTask = ref.putFile(defaultImage);
-      });
-
-      TaskSnapshot snapshot = await uploadTask!.whenComplete(() {});
-      url = await snapshot.ref.getDownloadURL();
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -91,11 +44,12 @@ class _HomeScreenState extends State<HomeScreen> {
                       context,
                       MaterialPageRoute(
                         builder: (context) => DetailsScreen(
-                            title: 'Bears Breeches',
-                            imageUrl: url.isNotEmpty
-                                ? url
-                                : 'images/bearsbreeches.jpg',
-                            subtitle: ''),
+                          flora: Flora(
+                              name: 'Bears Breeches',
+                              scientificName: 'Acanthus balanicus',
+                              imageUrl: 'images/bearsbreeches.jpg',
+                              description: 'Description of Bears Breeches'),
+                        ),
                       ),
                     );
                   },
@@ -108,10 +62,13 @@ class _HomeScreenState extends State<HomeScreen> {
                       context,
                       MaterialPageRoute(
                         builder: (context) => DetailsScreen(
-                            title: 'Green Chirett',
-                            imageUrl:
-                                url.isNotEmpty ? url : 'images/serpentina.jpg',
-                            subtitle: ''),
+                          flora: Flora(
+                              name: 'Green Chiretta / Serpentina',
+                              scientificName: 'Andrographis paniculate',
+                              imageUrl: 'images/serpentina.jpg',
+                              description:
+                                  'Description of Green Chiretta / Serpentina'),
+                        ),
                       ),
                     );
                   },
@@ -124,10 +81,12 @@ class _HomeScreenState extends State<HomeScreen> {
                       context,
                       MaterialPageRoute(
                         builder: (context) => DetailsScreen(
-                            title: 'Zebra Plant',
-                            imageUrl:
-                                url.isNotEmpty ? url : 'images/zebraplant.jpg',
-                            subtitle: ''),
+                          flora: Flora(
+                              name: 'Zebra Plant',
+                              scientificName: 'Aphelandra squarrosa',
+                              imageUrl: 'images/zebraplant.jpg',
+                              description: 'Description of Zebra Plant'),
+                        ),
                       ),
                     );
                   },
@@ -140,9 +99,12 @@ class _HomeScreenState extends State<HomeScreen> {
                       context,
                       MaterialPageRoute(
                         builder: (context) => DetailsScreen(
-                            title: 'Chinese Violet',
-                            imageUrl: url,
-                            subtitle: ''),
+                          flora: Flora(
+                              name: 'Chinese Violet',
+                              scientificName: 'Asystasia gangetica',
+                              imageUrl: 'images/chineseviolet.jpg',
+                              description: 'Description of Chinese Violet'),
+                        ),
                       ),
                     );
                   },
@@ -155,9 +117,13 @@ class _HomeScreenState extends State<HomeScreen> {
                       context,
                       MaterialPageRoute(
                         builder: (context) => DetailsScreen(
-                            title: 'Api Api Putih / Bungalon',
-                            imageUrl: url,
-                            subtitle: ''),
+                          flora: Flora(
+                              name: 'Api Api Putih / Bungalon',
+                              scientificName: 'Avicennia alba',
+                              imageUrl: 'images/bungalon.jpg',
+                              description:
+                                  'Description of Api Api Putih / Bungalon'),
+                        ),
                       ),
                     );
                   },
@@ -170,9 +136,12 @@ class _HomeScreenState extends State<HomeScreen> {
                       context,
                       MaterialPageRoute(
                         builder: (context) => DetailsScreen(
-                            title: 'Grey Barleria',
-                            imageUrl: url,
-                            subtitle: ''),
+                          flora: Flora(
+                              name: 'Grey Barleria',
+                              scientificName: '',
+                              imageUrl: 'images/greybarleria.jpg',
+                              description: 'Description of Grey Barleria'),
+                        ),
                       ),
                     );
                   },
@@ -185,7 +154,12 @@ class _HomeScreenState extends State<HomeScreen> {
                       context,
                       MaterialPageRoute(
                         builder: (context) => DetailsScreen(
-                            title: 'Peristrophe', imageUrl: url, subtitle: ''),
+                          flora: Flora(
+                              name: 'Peristrophe',
+                              scientificName: 'Dicliptera inaequalis',
+                              imageUrl: 'images/greybarleria.jpg',
+                              description: 'Description of Grey Barleria'),
+                        ),
                       ),
                     );
                   },

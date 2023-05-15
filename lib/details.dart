@@ -1,16 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'models/model.dart';
 
 class DetailsScreen extends StatelessWidget {
-  final String title;
-  final String subtitle;
-  final String imageUrl;
+  final Flora flora;
 
-  DetailsScreen({
-    required this.title,
-    required this.subtitle,
-    required this.imageUrl,
-  });
+  const DetailsScreen({required this.flora});
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +32,7 @@ class DetailsScreen extends StatelessWidget {
             width: double.infinity,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: NetworkImage(imageUrl),
+                image: NetworkImage(flora.imageUrl),
                 fit: BoxFit.cover,
               ),
             ),
@@ -46,7 +41,7 @@ class DetailsScreen extends StatelessWidget {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 20.0),
             child: Text(
-              title,
+              flora.name,
               style: GoogleFonts.poppins(
                 fontSize: 24.0,
                 fontWeight: FontWeight.bold,
@@ -57,7 +52,17 @@ class DetailsScreen extends StatelessWidget {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 20.0),
             child: Text(
-              subtitle,
+              flora.scientificName,
+              style: GoogleFonts.poppins(
+                fontSize: 16.0,
+              ),
+            ),
+          ),
+          SizedBox(height: 10.0),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.0),
+            child: Text(
+              flora.description,
               style: GoogleFonts.poppins(
                 fontSize: 16.0,
               ),
