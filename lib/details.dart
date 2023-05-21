@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'models/model.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class DetailsScreen extends StatelessWidget {
   final Flora flora;
@@ -12,11 +13,14 @@ class DetailsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.brown.shade900,
-        title: Text('FLORA',
-            style: GoogleFonts.poppins(
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
-                color: Colors.brown.shade50)),
+        title: Text(
+          'FLORA',
+          style: GoogleFonts.poppins(
+            fontSize: 30,
+            fontWeight: FontWeight.bold,
+            color: Colors.brown.shade50,
+          ),
+        ),
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {
@@ -30,11 +34,11 @@ class DetailsScreen extends StatelessWidget {
           Container(
             height: 200.0,
             width: double.infinity,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: NetworkImage(flora.imageUrl),
-                fit: BoxFit.cover,
-              ),
+            child: CachedNetworkImage(
+              imageUrl: flora.imageUrl,
+              fit: BoxFit.cover,
+              placeholder: (context, url) => CircularProgressIndicator(),
+              errorWidget: (context, url, error) => Icon(Icons.error),
             ),
           ),
           SizedBox(height: 20.0),
@@ -54,6 +58,8 @@ class DetailsScreen extends StatelessWidget {
             child: Text(
               flora.scientificName,
               style: GoogleFonts.poppins(
+                fontStyle: FontStyle.italic,
+                fontWeight: FontWeight.bold,
                 fontSize: 16.0,
               ),
             ),
@@ -64,7 +70,7 @@ class DetailsScreen extends StatelessWidget {
             child: Text(
               flora.description,
               style: GoogleFonts.poppins(
-                fontSize: 16.0,
+                fontSize: 12.0,
               ),
             ),
           ),

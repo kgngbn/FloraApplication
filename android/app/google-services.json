@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "422658963033",
+    "firebase_url": "https://flora-9ab03-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "flora-9ab03",
+    "storage_bucket": "flora-9ab03.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:422658963033:android:6d51398365932a2d226348",
+        "android_client_info": {
+          "package_name": "com.example.chapter_07"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "422658963033-7fjg7mh3sukn3sgc1pgjnfav9tc21tjg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuJy5hStQvdSSiEP2aESR4jswUZdvxjio"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "422658963033-7fjg7mh3sukn3sgc1pgjnfav9tc21tjg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
