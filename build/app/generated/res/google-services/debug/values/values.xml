@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">778961913528-68810ssim5vdc95u2vjtnm97pgjggplt.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">778961913528</string>
+    <string name="google_api_key" translatable="false">AIzaSyARC9eHevYPy7ZA73b55j4PZGLCI6kQcsA</string>
+    <string name="google_app_id" translatable="false">1:778961913528:android:08e28e716326039858964d</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyARC9eHevYPy7ZA73b55j4PZGLCI6kQcsA</string>
+    <string name="google_storage_bucket" translatable="false">flowers-71dc4.appspot.com</string>
+    <string name="project_id" translatable="false">flowers-71dc4</string>
+</resources>

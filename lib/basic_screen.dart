@@ -11,9 +11,7 @@ class BasicScreen extends StatelessWidget {
         backgroundColor: Colors.brown.shade900,
         title: Text('FLORA',
             style: GoogleFonts.poppins(
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
-                color: Colors.brown.shade50)),
+                fontWeight: FontWeight.bold, color: Colors.brown.shade50)),
         actions: <Widget>[
           Padding(
             padding: const EdgeInsets.all(10.0),
@@ -24,7 +22,7 @@ class BasicScreen extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Image.asset('images/flora.png'),
+          Image.asset('assets/Flora.png'),
           TextLayout(),
         ],
       ),

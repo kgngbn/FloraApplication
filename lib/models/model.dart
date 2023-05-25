@@ -9,4 +9,6 @@ class Flora {
       required this.scientificName,
       required this.imageUrl,
       required this.description});
+
+  void add(Flora flora) {}
 }
