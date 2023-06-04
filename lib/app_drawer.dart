@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_layout/basic_screen.dart';
 import 'package:flutter_layout/home.dart';
+import 'package:flutter_layout/settings.dart';
+
+import 'activity.dart';
 
 class AppDrawer extends StatelessWidget {
   @override
@@ -47,17 +50,33 @@ class AppDrawer extends StatelessWidget {
               title: const Text('About'),
             ),
           ),
-          ListTile(
-            leading: Icon(
-              Icons.train,
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ActivityScreen()),
+              );
+            },
+            child: ListTile(
+              leading: Icon(
+                Icons.train,
+              ),
+              title: const Text('Activity'),
             ),
-            title: const Text('Activity'),
           ),
-          ListTile(
-            leading: Icon(
-              Icons.settings_outlined,
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => SettingsScreen()),
+              );
+            },
+            child: ListTile(
+              leading: Icon(
+                Icons.settings_outlined,
+              ),
+              title: const Text('Settings'),
             ),
-            title: const Text('Settings'),
           ),
         ],
       ),
