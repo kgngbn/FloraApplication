@@ -9,6 +9,8 @@ MERGED from [:firebase_core] C:\Users\Jo\Documents\GitHub\FloraApplication\build
 MERGED from [:firebase_core] C:\Users\Jo\Documents\GitHub\FloraApplication\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-15:19
 MERGED from [:image_picker_android] C:\Users\Jo\Documents\GitHub\FloraApplication\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-19:19
 MERGED from [:image_picker_android] C:\Users\Jo\Documents\GitHub\FloraApplication\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-19:19
+MERGED from [:url_launcher_android] C:\Users\Jo\Documents\GitHub\FloraApplication\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-14:19
+MERGED from [:url_launcher_android] C:\Users\Jo\Documents\GitHub\FloraApplication\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-14:19
 MERGED from [com.google.firebase:firebase-firestore:24.6.0] C:\Users\Jo\.gradle\caches\transforms-3\a09379591b1cf219f241f00482bb1ee1\transformed\jetified-firebase-firestore-24.6.0\AndroidManifest.xml:15:5-23:19
 MERGED from [com.google.firebase:firebase-firestore:24.6.0] C:\Users\Jo\.gradle\caches\transforms-3\a09379591b1cf219f241f00482bb1ee1\transformed\jetified-firebase-firestore-24.6.0\AndroidManifest.xml:15:5-23:19
 MERGED from [com.google.firebase:firebase-storage:20.2.0] C:\Users\Jo\.gradle\caches\transforms-3\b7e6b6d24d93f2e38fe3a47914bd08bf\transformed\jetified-firebase-storage-20.2.0\AndroidManifest.xml:28:5-36:19
@@ -51,6 +53,7 @@ MERGED from [:firebase_core] C:\Users\Jo\Documents\GitHub\FloraApplication\build
 MERGED from [:image_picker_android] C:\Users\Jo\Documents\GitHub\FloraApplication\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-21:12
 MERGED from [:flutter_plugin_android_lifecycle] C:\Users\Jo\Documents\GitHub\FloraApplication\build\flutter_plugin_android_lifecycle\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:sqflite] C:\Users\Jo\Documents\GitHub\FloraApplication\build\sqflite\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:url_launcher_android] C:\Users\Jo\Documents\GitHub\FloraApplication\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-16:12
 MERGED from [:path_provider_android] C:\Users\Jo\Documents\GitHub\FloraApplication\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:firebase-firestore:24.6.0] C:\Users\Jo\.gradle\caches\transforms-3\a09379591b1cf219f241f00482bb1ee1\transformed\jetified-firebase-firestore-24.6.0\AndroidManifest.xml:2:1-25:12
 MERGED from [com.google.firebase:firebase-storage:20.2.0] C:\Users\Jo\.gradle\caches\transforms-3\b7e6b6d24d93f2e38fe3a47914bd08bf\transformed\jetified-firebase-storage-20.2.0\AndroidManifest.xml:15:1-38:12
@@ -119,6 +122,8 @@ MERGED from [:flutter_plugin_android_lifecycle] C:\Users\Jo\Documents\GitHub\Flo
 MERGED from [:flutter_plugin_android_lifecycle] C:\Users\Jo\Documents\GitHub\FloraApplication\build\flutter_plugin_android_lifecycle\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:sqflite] C:\Users\Jo\Documents\GitHub\FloraApplication\build\sqflite\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:sqflite] C:\Users\Jo\Documents\GitHub\FloraApplication\build\sqflite\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:url_launcher_android] C:\Users\Jo\Documents\GitHub\FloraApplication\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:url_launcher_android] C:\Users\Jo\Documents\GitHub\FloraApplication\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:path_provider_android] C:\Users\Jo\Documents\GitHub\FloraApplication\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:path_provider_android] C:\Users\Jo\Documents\GitHub\FloraApplication\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.firebase:firebase-firestore:24.6.0] C:\Users\Jo\.gradle\caches\transforms-3\a09379591b1cf219f241f00482bb1ee1\transformed\jetified-firebase-firestore-24.6.0\AndroidManifest.xml:6:5-8:41
@@ -259,6 +264,14 @@ ADDED from [:image_picker_android] C:\Users\Jo\Documents\GitHub\FloraApplication
 		ADDED from [:image_picker_android] C:\Users\Jo\Documents\GitHub\FloraApplication\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:17:17-72
 	android:name
 		ADDED from [:image_picker_android] C:\Users\Jo\Documents\GitHub\FloraApplication\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:16:17-67
+activity#io.flutter.plugins.urllauncher.WebViewActivity
+ADDED from [:url_launcher_android] C:\Users\Jo\Documents\GitHub\FloraApplication\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-13:74
+	android:exported
+		ADDED from [:url_launcher_android] C:\Users\Jo\Documents\GitHub\FloraApplication\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-37
+	android:theme
+		ADDED from [:url_launcher_android] C:\Users\Jo\Documents\GitHub\FloraApplication\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-71
+	android:name
+		ADDED from [:url_launcher_android] C:\Users\Jo\Documents\GitHub\FloraApplication\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-74
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from [com.google.firebase:firebase-firestore:24.6.0] C:\Users\Jo\.gradle\caches\transforms-3\a09379591b1cf219f241f00482bb1ee1\transformed\jetified-firebase-firestore-24.6.0\AndroidManifest.xml:12:5-79
 MERGED from [com.google.firebase:firebase-storage:20.2.0] C:\Users\Jo\.gradle\caches\transforms-3\b7e6b6d24d93f2e38fe3a47914bd08bf\transformed\jetified-firebase-storage-20.2.0\AndroidManifest.xml:25:5-79

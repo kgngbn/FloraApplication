@@ -139,6 +139,7 @@ class _HomeScreenState extends State<HomeScreen> {
           scientificName: doc["scientificName"],
           imageUrl: doc["imageUrl"],
           description: doc["description"],
+          websiteUrl: null,
         );
         // FloraProvider.of(context).add(flora);
         tempList.add(flora);
