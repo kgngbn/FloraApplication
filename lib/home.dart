@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'app_drawer.dart';
-import 'details.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'models/model.dart';
+import 'details.dart';
 
 final storage = FirebaseStorage.instance;
 final storageRef = FirebaseStorage.instance.ref();
@@ -24,6 +24,24 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   final List<Flora> floraItems = [];
   String filterText = '';
+
+  List<String> favoritePlants = [];
+
+  void addToFavorites(String plantName) {
+    setState(() {
+      favoritePlants.add(plantName);
+    });
+  }
+
+  void removeFromFavorites(String plantName) {
+    setState(() {
+      favoritePlants.remove(plantName);
+    });
+  }
+
+  bool isFavorite(String plantName) {
+    return favoritePlants.contains(plantName);
+  }
 
   @override
   void initState() {
@@ -67,20 +85,21 @@ class _HomeScreenState extends State<HomeScreen> {
             child: ListView.builder(
               itemCount: filteredFlora.length,
               itemBuilder: (context, index) {
+                final floraItem = filteredFlora[index];
                 return Card(
                   child: ListTile(
                     title: Text(
-                      filteredFlora[index].name,
+                      floraItem.name,
                       style: GoogleFonts.poppins(),
                     ),
                     subtitle: Text(
-                      filteredFlora[index].scientificName,
+                      floraItem.scientificName,
                       style: GoogleFonts.poppins(
                         fontStyle: FontStyle.italic,
                       ),
                     ),
                     leading: Image.network(
-                      filteredFlora[index].imageUrl,
+                      floraItem.imageUrl,
                       width: 100, // Set a fixed width for the image
                       height: 100, // Set a fixed height for the image
                     ),
@@ -89,10 +108,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         context,
                         MaterialPageRoute(
                           builder: (context) => DetailsScreen(
-                            imageUrl: filteredFlora[index].imageUrl,
-                            title: filteredFlora[index].name,
-                            subtitle: filteredFlora[index].scientificName,
-                            description: filteredFlora[index].description,
+                            imageUrl: floraItem.imageUrl,
+                            title: floraItem.name,
+                            subtitle: floraItem.scientificName,
+                            description: floraItem.description,
+                            addToFavorites: addToFavorites,
+                            removeFromFavorites: removeFromFavorites,
+                            isFavorite: isFavorite(floraItem.name),
                           ),
                         ),
                       );
@@ -104,7 +126,11 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-      drawer: AppDrawer(),
+      drawer: AppDrawer(
+        favoritePlants: favoritePlants,
+        removeFromFavorites: removeFromFavorites,
+        addToFavorites: addToFavorites,
+      ),
     );
   }
 
@@ -140,6 +166,7 @@ class _HomeScreenState extends State<HomeScreen> {
           imageUrl: doc["imageUrl"],
           description: doc["description"],
           websiteUrl: null,
+          id: null,
         );
         // FloraProvider.of(context).add(flora);
         tempList.add(flora);

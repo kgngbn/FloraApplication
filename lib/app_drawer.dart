@@ -1,12 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_layout/basic_screen.dart';
-import 'package:flutter_layout/home.dart';
 import 'package:flutter_layout/settings.dart';
 
 import 'activity.dart';
 import 'favorite_screen.dart';
+import 'home.dart';
 
 class AppDrawer extends StatelessWidget {
+  final List<String> favoritePlants;
+  final Function(String) removeFromFavorites;
+  final Function(String) addToFavorites;
+
+  AppDrawer({
+    required this.favoritePlants,
+    required this.removeFromFavorites,
+    required this.addToFavorites,
+  });
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -41,7 +51,12 @@ class AppDrawer extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => BasicScreen()),
+                MaterialPageRoute(
+                    builder: (context) => BasicScreen(
+                          favoritePlants: favoritePlants,
+                          removeFromFavorites: removeFromFavorites,
+                          addToFavorites: addToFavorites,
+                        )),
               );
             },
             child: ListTile(
@@ -69,7 +84,12 @@ class AppDrawer extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => FavoriteScreen()),
+                MaterialPageRoute(
+                  builder: (context) => FavoriteScreen(
+                    favoritePlants: favoritePlants,
+                    removeFromFavorites: removeFromFavorites,
+                  ),
+                ),
               );
             },
             child: ListTile(
