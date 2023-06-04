@@ -1,104 +1,47 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 
-class FavoriteScreen extends StatelessWidget {
-  final List<String> favoritePlants;
+class DetailsScreen extends StatefulWidget {
+  final String imageUrl;
+  final String title;
+  final String subtitle;
+  final String description;
+  final Function(String) addToFavorites;
   final Function(String) removeFromFavorites;
+  final bool isFavorite;
 
-  FavoriteScreen({
-    required this.favoritePlants,
+  const DetailsScreen({
+    required this.imageUrl,
+    required this.title,
+    required this.subtitle,
+    required this.description,
+    required this.addToFavorites,
     required this.removeFromFavorites,
+    required this.isFavorite,
   });
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Favorites',
-          style: GoogleFonts.poppins(
-            fontWeight: FontWeight.bold,
-            color: Colors.brown.shade50,
-          ),
-        ),
-      ),
-      body: ListView.builder(
-        itemCount: favoritePlants.length,
-        itemBuilder: (context, index) {
-          final plantName = favoritePlants[index];
-          return ListTile(
-            title: Text(
-              plantName,
-              style: GoogleFonts.poppins(),
-            ),
-            trailing: IconButton(
-              icon: Icon(
-                Icons.favorite,
-                color: Colors.red,
-              ),
-              onPressed: () {
-                removeFromFavorites(plantName);
-              },
-            ),
-            onTap: () {
-              // Navigate to plant details screen
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) =>
-                      PlantDetailsScreen(plantName: plantName),
-                ),
-              );
-            },
-          );
-        },
-      ),
-    );
-  }
+  _DetailsScreenState createState() => _DetailsScreenState();
 }
 
-class PlantDetailsScreen extends StatefulWidget {
-  final String plantName;
-
-  PlantDetailsScreen({required this.plantName});
-
-  @override
-  _PlantDetailsScreenState createState() => _PlantDetailsScreenState();
-}
-
-class _PlantDetailsScreenState extends State<PlantDetailsScreen> {
+class _DetailsScreenState extends State<DetailsScreen> {
   bool isFavorite = false;
-  String imageUrl = '';
-  String subtitle = '';
-  String description = '';
-
-  void toggleFavorite() {
-    setState(() {
-      isFavorite = !isFavorite;
-    });
-  }
 
   @override
   void initState() {
     super.initState();
-    fetchPlantDetails();
+    isFavorite = widget.isFavorite;
   }
 
-  void fetchPlantDetails() async {
-    try {
-      DocumentSnapshot doc = await FirebaseFirestore.instance
-          .collection('plants')
-          .doc(widget.plantName)
-          .get();
-      setState(() {
-        imageUrl = doc['imageUrl'];
-        subtitle = doc['subtitle'];
-        description = doc['description'];
-      });
-    } catch (e) {
-      print('Error fetching plant details: $e');
-    }
+  void toggleFavorite() {
+    setState(() {
+      isFavorite = !isFavorite;
+      if (isFavorite) {
+        widget.addToFavorites(widget.title);
+      } else {
+        widget.removeFromFavorites(widget.title);
+      }
+    });
   }
 
   @override
@@ -106,7 +49,7 @@ class _PlantDetailsScreenState extends State<PlantDetailsScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Plant Details',
+          'FLORA',
           style: GoogleFonts.poppins(
             fontWeight: FontWeight.bold,
             color: Colors.brown.shade50,
@@ -116,10 +59,10 @@ class _PlantDetailsScreenState extends State<PlantDetailsScreen> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.network(imageUrl),
+          Image.network(widget.imageUrl),
           SizedBox(height: 16),
           Text(
-            widget.plantName,
+            widget.title,
             style: GoogleFonts.poppins(
               fontSize: 24,
               fontWeight: FontWeight.bold,
@@ -127,12 +70,12 @@ class _PlantDetailsScreenState extends State<PlantDetailsScreen> {
           ),
           SizedBox(height: 16),
           Text(
-            subtitle,
+            widget.subtitle,
             style: GoogleFonts.poppins(fontSize: 16),
           ),
           SizedBox(height: 16),
           Text(
-            description,
+            widget.description,
             style: GoogleFonts.poppins(fontSize: 12),
           ),
           SizedBox(height: 16),
