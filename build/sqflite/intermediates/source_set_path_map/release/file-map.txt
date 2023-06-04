@@ -1,0 +1,12 @@
+com.tekartik.sqflite-jetified-window-java-1.0.0-beta04-0 C:\Users\Jo\.gradle\caches\transforms-3\0c3827b861146d3b42904e488ae89696\transformed\jetified-window-java-1.0.0-beta04\res
+com.tekartik.sqflite-core-1.6.0-1 C:\Users\Jo\.gradle\caches\transforms-3\bfa6c40b55cd4f278e78fc83e150cdbd\transformed\core-1.6.0\res
+com.tekartik.sqflite-jetified-annotation-experimental-1.1.0-2 C:\Users\Jo\.gradle\caches\transforms-3\e7de62702c6e7ac8e593527f2449161b\transformed\jetified-annotation-experimental-1.1.0\res
+com.tekartik.sqflite-jetified-window-1.0.0-beta04-3 C:\Users\Jo\.gradle\caches\transforms-3\ee0ba16e43dd06b5ec2a70894444f8c7\transformed\jetified-window-1.0.0-beta04\res
+com.tekartik.sqflite-main-4 C:\Users\Jo\AppData\Local\Pub\Cache\hosted\pub.dev\sqflite-2.2.8+4\android\src\main\res
+com.tekartik.sqflite-release-5 C:\Users\Jo\AppData\Local\Pub\Cache\hosted\pub.dev\sqflite-2.2.8+4\android\src\release\res
+com.tekartik.sqflite-pngs-6 C:\Users\Jo\Documents\GitHub\FloraApplication\build\sqflite\generated\res\pngs\release
+com.tekartik.sqflite-resValues-7 C:\Users\Jo\Documents\GitHub\FloraApplication\build\sqflite\generated\res\resValues\release
+com.tekartik.sqflite-rs-8 C:\Users\Jo\Documents\GitHub\FloraApplication\build\sqflite\generated\res\rs\release
+com.tekartik.sqflite-mergeReleaseResources-9 C:\Users\Jo\Documents\GitHub\FloraApplication\build\sqflite\intermediates\incremental\release\mergeReleaseResources\merged.dir
+com.tekartik.sqflite-mergeReleaseResources-10 C:\Users\Jo\Documents\GitHub\FloraApplication\build\sqflite\intermediates\incremental\release\mergeReleaseResources\stripped.dir
+com.tekartik.sqflite-merged_res-11 C:\Users\Jo\Documents\GitHub\FloraApplication\build\sqflite\intermediates\merged_res\release

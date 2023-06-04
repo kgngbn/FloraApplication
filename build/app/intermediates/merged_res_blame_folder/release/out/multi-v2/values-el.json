@@ -4,7 +4,7 @@
             "outputFile": "com.example.chapter_03.app-mergeReleaseResources-24:/values-el/values-el.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Jo\\.gradle\\caches\\transforms-3\\b82da84a2fc4d25e4efd1ea4ee522b45\\transformed\\core-1.9.0\\res\\values-el\\values-el.xml",
+                    "source": "C:\\Users\\Jo\\.gradle\\caches\\transforms-3\\1a50d7002623afc27330a09145ca3a50\\transformed\\core-1.9.0\\res\\values-el\\values-el.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Jo\\.gradle\\caches\\transforms-3\\e93ffe4a69c4c71a5ac8e6a75c8cbf5c\\transformed\\jetified-play-services-basement-18.1.0\\res\\values-el\\values.xml",
+                    "source": "C:\\Users\\Jo\\.gradle\\caches\\transforms-3\\88f3541ca738e87b38b0ac79692e5d12\\transformed\\jetified-play-services-basement-18.1.0\\res\\values-el\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -38,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Jo\\.gradle\\caches\\transforms-3\\3be39ef36548f226ff02136ed5e9db5c\\transformed\\jetified-play-services-base-18.0.1\\res\\values-el\\values.xml",
+                    "source": "C:\\Users\\Jo\\.gradle\\caches\\transforms-3\\2cb9d494a98ae51d69b6b52e36a6567c\\transformed\\jetified-play-services-base-18.0.1\\res\\values-el\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",

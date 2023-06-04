@@ -1,0 +1,16 @@
+io.flutter.plugins.firebase.storage.firebase_storage-jetified-window-java-1.0.0-beta04-0 C:\Users\Jo\.gradle\caches\transforms-3\0c3827b861146d3b42904e488ae89696\transformed\jetified-window-java-1.0.0-beta04\res
+io.flutter.plugins.firebase.storage.firebase_storage-jetified-play-services-base-18.0.1-1 C:\Users\Jo\.gradle\caches\transforms-3\2cb9d494a98ae51d69b6b52e36a6567c\transformed\jetified-play-services-base-18.0.1\res
+io.flutter.plugins.firebase.storage.firebase_storage-jetified-play-services-basement-18.1.0-2 C:\Users\Jo\.gradle\caches\transforms-3\88f3541ca738e87b38b0ac79692e5d12\transformed\jetified-play-services-basement-18.1.0\res
+io.flutter.plugins.firebase.storage.firebase_storage-jetified-firebase-common-20.3.2-3 C:\Users\Jo\.gradle\caches\transforms-3\b3786c8dfe9597d06afaebb219781701\transformed\jetified-firebase-common-20.3.2\res
+io.flutter.plugins.firebase.storage.firebase_storage-core-1.6.0-4 C:\Users\Jo\.gradle\caches\transforms-3\bfa6c40b55cd4f278e78fc83e150cdbd\transformed\core-1.6.0\res
+io.flutter.plugins.firebase.storage.firebase_storage-jetified-annotation-experimental-1.1.0-5 C:\Users\Jo\.gradle\caches\transforms-3\e7de62702c6e7ac8e593527f2449161b\transformed\jetified-annotation-experimental-1.1.0\res
+io.flutter.plugins.firebase.storage.firebase_storage-jetified-window-1.0.0-beta04-6 C:\Users\Jo\.gradle\caches\transforms-3\ee0ba16e43dd06b5ec2a70894444f8c7\transformed\jetified-window-1.0.0-beta04\res
+io.flutter.plugins.firebase.storage.firebase_storage-main-7 C:\Users\Jo\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_storage-11.2.1\android\src\main\res
+io.flutter.plugins.firebase.storage.firebase_storage-release-8 C:\Users\Jo\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_storage-11.2.1\android\src\release\res
+io.flutter.plugins.firebase.storage.firebase_storage-packaged_res-9 C:\Users\Jo\Documents\GitHub\FloraApplication\build\firebase_core\intermediates\packaged_res\release
+io.flutter.plugins.firebase.storage.firebase_storage-pngs-10 C:\Users\Jo\Documents\GitHub\FloraApplication\build\firebase_storage\generated\res\pngs\release
+io.flutter.plugins.firebase.storage.firebase_storage-resValues-11 C:\Users\Jo\Documents\GitHub\FloraApplication\build\firebase_storage\generated\res\resValues\release
+io.flutter.plugins.firebase.storage.firebase_storage-rs-12 C:\Users\Jo\Documents\GitHub\FloraApplication\build\firebase_storage\generated\res\rs\release
+io.flutter.plugins.firebase.storage.firebase_storage-mergeReleaseResources-13 C:\Users\Jo\Documents\GitHub\FloraApplication\build\firebase_storage\intermediates\incremental\release\mergeReleaseResources\merged.dir
+io.flutter.plugins.firebase.storage.firebase_storage-mergeReleaseResources-14 C:\Users\Jo\Documents\GitHub\FloraApplication\build\firebase_storage\intermediates\incremental\release\mergeReleaseResources\stripped.dir
+io.flutter.plugins.firebase.storage.firebase_storage-merged_res-15 C:\Users\Jo\Documents\GitHub\FloraApplication\build\firebase_storage\intermediates\merged_res\release
