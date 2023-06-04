@@ -9,9 +9,12 @@ class Flora {
       required this.scientificName,
       required this.imageUrl,
       required this.description,
-      required websiteUrl});
+      required websiteUrl,
+      required id});
 
   get websiteUrl => null;
+
+  get id => null;
 
   void add(Flora flora) {}
 }

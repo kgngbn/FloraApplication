@@ -4,6 +4,7 @@ import 'package:flutter_layout/home.dart';
 import 'package:flutter_layout/settings.dart';
 
 import 'activity.dart';
+import 'favorite_screen.dart';
 
 class AppDrawer extends StatelessWidget {
   @override
@@ -62,6 +63,20 @@ class AppDrawer extends StatelessWidget {
                 Icons.train,
               ),
               title: const Text('Activity'),
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => FavoriteScreen()),
+              );
+            },
+            child: ListTile(
+              leading: Icon(
+                Icons.favorite,
+              ),
+              title: const Text('Favorite Plants'),
             ),
           ),
           GestureDetector(

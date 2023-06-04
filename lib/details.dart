@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class DetailsScreen extends StatelessWidget {
+class DetailsScreen extends StatefulWidget {
   final String imageUrl;
   final String title;
   final String subtitle;
@@ -15,6 +15,19 @@ class DetailsScreen extends StatelessWidget {
   });
 
   @override
+  _DetailsScreenState createState() => _DetailsScreenState();
+}
+
+class _DetailsScreenState extends State<DetailsScreen> {
+  bool isFavorite = false;
+
+  void toggleFavorite() {
+    setState(() {
+      isFavorite = !isFavorite;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -25,22 +38,30 @@ class DetailsScreen extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.network(imageUrl),
+          Image.network(widget.imageUrl),
           SizedBox(height: 16),
           Text(
-            title,
+            widget.title,
             style:
                 GoogleFonts.poppins(fontSize: 24, fontWeight: FontWeight.bold),
           ),
           SizedBox(height: 16),
           Text(
-            subtitle,
+            widget.subtitle,
             style: GoogleFonts.poppins(fontSize: 16),
           ),
           SizedBox(height: 16),
           Text(
-            description,
+            widget.description,
             style: GoogleFonts.poppins(fontSize: 12),
+          ),
+          SizedBox(height: 16),
+          IconButton(
+            icon: Icon(
+              isFavorite ? Icons.favorite : Icons.favorite_border,
+              color: Colors.red,
+            ),
+            onPressed: toggleFavorite,
           ),
         ],
       ),
